@@ -46,7 +46,12 @@
                     eval(preparator);
                 }
 
-                eval(editor.getValue());
+                try {
+                  eval(editor.getValue());
+                } catch (e) {
+                    alerts.innerHTML = '<div class="alert alert-danger"><strong>☢️ &nbsp;&nbsp; Syntax error!</strong> ' + e.message + '</div>';
+                    return;
+                }
                 // Evaluate the "evaluator" to keep scope 😱 💩
                 eval(evaluator.toString());
                 var error = evaluator();
