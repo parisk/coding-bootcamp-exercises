@@ -4,8 +4,6 @@ title: Variables
 category: javascript
 ---
 
-# JavaScript Variables
-
 Create a variable with name `greeting` and value `Hello world!`.
 
 <script>

@@ -11,6 +11,7 @@
     </head>
     <body>
         <div class="container">
+            <h1>{{ page.title}}</h1>
             {{ content }}
 
             <div id="alerts"></div>
@@ -32,6 +33,13 @@
             var button = document.getElementById('evaluate');
             button.addEventListener('click', function () {
                 alerts.innerHTML = '';
+
+				if (typeof preparator == 'function') {
+                    eval(preparator.toString());
+                } else if (typeof preparator == 'string') {
+                    eval(preparator);
+                }
+
                 eval(editor.getValue());
                 // Evaluate the "evaluator" to keep scope 😱 💩
                 eval(evaluator.toString());
