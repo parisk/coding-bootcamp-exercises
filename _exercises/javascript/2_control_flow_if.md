@@ -4,7 +4,7 @@ title: Control flow (if statements)
 category: javascript
 ---
 
-You are provided with two variables (you don't have to declare them!):
+You are provided with two variables (**you don't have to declare them**):
 
 - A number: `n` (you can control it's value using the input below)
 - A boolean: `isZero`
