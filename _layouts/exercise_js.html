@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Coding Bootcamp Exercises</title>
+        <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/bower_components/codemirror/lib/codemirror.css" />
+        <link rel="stylesheet" href="/bower_components/codemirror/theme/mdn-like.css" />
+        <script src="/bower_components/codemirror/lib/codemirror.js"></script>
+        <script src="/bower_components/codemirror/mode/javascript/javascript.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            {{ content }}
+
+            <div id="alerts"></div>
+            <div id="editor"></div>
+            <div>
+            	<button id="evaluate" class="btn btn-success">Evaluate!</button>
+            </div>
+        </div>
+
+        <script>
+            var editor = CodeMirror(document.getElementById('editor'), {
+                mode: 'javascript',
+                theme: 'mdn-like',
+                autofocus: true
+            });
+
+            var alerts = document.getElementById('alerts');
+
+            var button = document.getElementById('evaluate');
+            button.addEventListener('click', function () {
+                alerts.innerHTML = '';
+                eval(editor.getValue());
+                // Evaluate the "evaluator" to keep scope 😱 💩
+                eval(evaluator.toString());
+                var error = evaluator();
+                if (!error) {
+                    alerts.innerHTML = '<div class="alert alert-success" role="alert"><strong>🎉 &nbsp;&nbsp; Well done!</strong> You succeeded in this exercise!</div>'
+                } else {
+                    alerts.innerHTML = '<div class="alert alert-danger"><strong>😱 &nbsp;&nbsp; Oops!</strong> ' + error + '</div>';
+                }
+            })
+        </script>
+    </body>
+</html>

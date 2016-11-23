@@ -1,0 +1,18 @@
+title: Code and Work exercises
+email: paris@sourcelair.com
+description: Exercises for the Code and Work coding bootcamp.
+baseurl: ""
+url: "http://coding-bootcamp.pkasid.com"
+twitter_username: pariskasid
+github_username:  parisk
+
+# Build settings
+markdown: kramdown
+exclude:
+  - Gemfile
+  - Gemfile.lock
+
+collections:
+  exercises:
+    permalink: /exercises/:path/
+    output: true

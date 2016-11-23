@@ -1,0 +1,23 @@
+{
+  "name": "coding-bootcamp-exercises",
+  "authors": [
+    "Paris Kasidiaris <paris@sourcelair.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "http://coding-bootcamp.pkasid.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "codemirror": "^5.19.0"
+  }
+}
