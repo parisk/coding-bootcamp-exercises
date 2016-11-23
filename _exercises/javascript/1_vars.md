@@ -1,6 +1,6 @@
 ---
 layout: exercise_js
-title: Variables
+title: "Syntax: Variables"
 category: javascript
 ---
 

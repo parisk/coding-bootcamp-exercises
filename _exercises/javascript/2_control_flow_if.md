@@ -1,6 +1,6 @@
 ---
 layout: exercise_js
-title: Control flow (if statements)
+title: "Syntax: Control flow (if statements)"
 category: javascript
 ---
 

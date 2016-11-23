@@ -1,6 +1,6 @@
 ---
 layout: exercise_js
-title: Control flow (loops)
+title: "Syntax: Control flow (loops)"
 category: javascript
 ---
 

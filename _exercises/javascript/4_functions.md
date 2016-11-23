@@ -1,6 +1,6 @@
 ---
 layout: exercise_js
-title: Functions
+title: "Syntax: Functions"
 category: javascript
 ---
 
