@@ -1,0 +1,204 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>The syntax of JavaScript</title>
+
+		<link rel="stylesheet" href="../reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="../reveal.js/css/theme/white.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../reveal.js/css/print/pdf.css' : '../../reveal.js/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-markdown data-separator="^\n\n">
+					<script type="text/template">
+### Coding Bootcamp
+
+## The syntax of JavaScript
+
+
+## The syntax of JavaScript
+
+Paris Kasidiaris
+
+[@pariskasid](https://twitter.com/pariskasid) / [paris@sourcelair.com](mailto:paris@sourcelair.com)
+
+
+## Agenda
+
+* Intro
+* Variables
+* Control flow
+* Functions
+* Anonymous functions
+* Objects
+
+
+## Intro
+
+JavaScript uses a C-like syntax, like Java and C#.
+
+```javascript
+var name = 'Slim Shady';
+
+// Output 5 times: My name is jigga-jigga Slim Shady.
+for (var i=0; i<5; i++) {
+  console.log('My name is jigga-jigga ' + name + '.');
+}
+```
+
+
+## Variables
+
+Variables are symbolic names for values in your application.
+
+Variables are declared with the `var` keyword (e.g. `var n = 5;`).
+
+```javascript
+var n;
+console.log('The value of n is ' + n); // The value of n is undefined
+
+n = 5;
+console.log('The value of n is ' + n); // The value of n is 5
+```
+
+[coding-bootcamp.pkasid.com/exercises/javascript/1_vars/](http://coding-bootcamp.pkasid.com/exercises/javascript/1_vars/)
+[developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#Variables](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#Variables)
+
+
+## Control flow (if statement)
+
+```javascript
+var age = 25;
+
+if (age >= 0 && < 18) {
+  console.log('Underage');
+} else if (age >= 18) {
+  console.log('Adult')
+} else {
+  console.log('Wow!')
+}
+```
+
+[coding-bootcamp.pkasid.com/exercises/javascript/2_control_flow_if/](http://coding-bootcamp.pkasid.com/exercises/javascript/2_control_flow_if/)
+[developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling)
+
+
+## Control flow (loops)
+
+```javascript
+var i;
+
+for (i=0; i<10; i++) {
+  console.log(i);
+}
+
+i=0;
+while (i<10) {
+  console.log(i);
+  i++;
+}
+```
+
+[coding-bootcamp.pkasid.com/exercises/javascript/3_control_flow_loops/](http://coding-bootcamp.pkasid.com/exercises/javascript/3_control_flow_loops/)
+[developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration)
+
+
+## Functions
+
+Functions are one of the fundamental building blocks in JavaScript.
+
+A function is a JavaScript procedure—a set of statements that performs a task or calculates a value.
+
+```javascript
+function square(x) {
+  return x * x;
+}
+```
+
+[coding-bootcamp.pkasid.com/exercises/javascript/4_functions/](http://coding-bootcamp.pkasid.com/exercises/javascript/4_functions/)
+[developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions)
+
+
+## Anonymous functions
+
+```javascript
+var square = function (x) {
+  return x * x;
+}
+
+console.log(square);    // function (x) { return x * x; }
+console.log(square(2)); // 4
+
+var sq = square;
+
+console.log(sq(2));    // 4
+```
+
+[developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions)
+
+
+## Objects
+
+JavaScript is an object-based language based on prototypes instead of classes.
+
+```javascript
+// "Object" is a prototype, "myCar" is an object
+var myCar = new Object();
+
+// myCar.brand is a property
+myCar.brand = "Ford";
+
+// myCar.getBrand is a method
+myCar.getBrand = function () {
+  return this.brand; // "this" refers to the current object: myCar
+}
+```
+
+[developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects)
+
+					</script>
+				</section>
+				<section>
+				<h2>License</h2>
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+				</section>
+			</div>
+		</div>
+
+		<script src="../reveal.js/lib/js/head.min.js"></script>
+		<script src="../reveal.js/js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				// Vertical centering of slides
+				center: false,
+				// Push each slide change to the browser history
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../reveal.js/plugin/markdown/marked.js' },
+					{ src: '../reveal.js/plugin/markdown/markdown.js' },
+					{ src: '../reveal.js/plugin/notes/notes.js', async: true },
+					{ src: '../reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

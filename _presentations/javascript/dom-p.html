@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>The Document Object Model</title>
+
+		<link rel="stylesheet" href="../reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="../reveal.js/css/theme/white.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../reveal.js/css/print/pdf.css' : '../../reveal.js/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-markdown data-separator="^\n\n">
+					<script type="text/template">
+### Coding Bootcamp
+
+## The Document Object Model
+
+
+## The Document Object Model
+
+Paris Kasidiaris
+
+[@pariskasid](https://twitter.com/pariskasid) / [paris@sourcelair.com](mailto:paris@sourcelair.com)
+
+
+## Agenda
+
+* Intro
+* Accessing the DOM
+* Accessing HTML elements
+* Creating HTML elements
+* Modifying HTML elements
+* Learning more about the DOM
+
+
+## Intro
+
+The Document Object Model (DOM) is a programming interface for HTML.
+
+It provides a structured representation of the document (e.g. a web page) as a tree.
+
+It defines methods that allow access to the tree, so that they can change the document structure, style and content.
+
+
+## Accessing the DOM
+
+The browser provides us with access to DOM objects.
+
+```javascript
+// Update the page's title
+document.title = 'Hello!';
+
+// Refresh the current tab
+window.reload();
+
+// Get the element with id="button"
+var button = document.getElementById('button');
+
+// Update the button's text
+button.textContent = 'Push the button!'
+```
+
+
+## Accessing HTML elements
+
+```javascript
+// Accessing an HTML element by ID
+var d = document.getElementById('something');
+
+// Accessing HTML elements by class name
+var prettyElements = document.getElementsByClassName('pretty');
+
+// Accessing HTML elements by CSS selectors
+var prettyDivs = document.querySelectorAll('div.pretty');
+```
+
+
+## Creating HTML elements
+
+```javascript
+// Create a div element
+var d = document.createElement('div');
+
+// Create an image element
+var img = document.createElement('img');
+
+// Add the above elements into the web page
+document.body.appendChild(d);
+d.appendChild(img);
+```
+
+[coding-bootcamp.pkasid.com/exercises/javascript/5_dom_create/](http://coding-bootcamp.pkasid.com/exercises/javascript/5_dom_create/)
+[developer.mozilla.org/en-US/docs/Web/API/Document/createElement](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement)
+
+
+## Modifying HTML elements
+
+```javascript
+// Modify the text of an HTML element
+d.textConent = 'This is a div!';
+
+// Modify an attribute of an HTML element
+img.src = 'https://github.com/parisk.png';
+
+// Modify the HTML contents of an element
+d.innerHTML = 'This is some <strong>bold test</strong>.';
+```
+
+[coding-bootcamp.pkasid.com/exercises/javascript/6_dom_modify/](http://coding-bootcamp.pkasid.com/exercises/javascript/6_dom_modify/)
+[developer.mozilla.org/en-US/docs/Web/API/HTMLElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement)
+
+
+## Learning more about the DOM
+
+The Document Object Model is a **huge** resource.
+
+The Mozilla Developer Network is your best friend.
+
+[developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
+					</script>
+				</section>
+				<section>
+				<h2>License</h2>
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+				</section>
+			</div>
+		</div>
+
+		<script src="../reveal.js/lib/js/head.min.js"></script>
+		<script src="../reveal.js/js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				// Vertical centering of slides
+				center: false,
+				// Push each slide change to the browser history
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../reveal.js/plugin/markdown/marked.js' },
+					{ src: '../reveal.js/plugin/markdown/markdown.js' },
+					{ src: '../reveal.js/plugin/notes/notes.js', async: true },
+					{ src: '../reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

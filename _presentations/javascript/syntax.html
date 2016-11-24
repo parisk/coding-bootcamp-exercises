@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>The syntax of JavaScript</title>
+
+    <!-- Bootstrap -->
+    <!-- JQuery is required -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="../css/pandoc-syntax.css">
+  </head>
+  <body>
+<h1 id="coding-bootcamp-the-syntax-of-javascript">Coding Bootcamp: The syntax of JavaScript</h1>
+<h2 id="the-syntax-of-javascript">The syntax of JavaScript</h2>
+<p>Paris Kasidiaris</p>
+<p><a href="https://twitter.com/pariskasid">@pariskasid</a> / <a href="mailto:paris@sourcelair.com">paris@sourcelair.com</a></p>
+<h2 id="agenda">Agenda</h2>
+<ul>
+<li>Intro</li>
+<li>Variables</li>
+<li>Control flow</li>
+<li>Functions</li>
+<li>Anonymous functions</li>
+<li>Objects</li>
+</ul>
+<h2 id="intro">Intro</h2>
+<p>JavaScript uses a C-like syntax, like Java and C#.</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> name <span class="op">=</span> <span class="st">&#39;Slim Shady&#39;</span><span class="op">;</span>
+
+<span class="co">// Output 5 times: My name is jigga-jigga Slim Shady.</span>
+<span class="cf">for</span> (<span class="kw">var</span> i<span class="op">=</span><span class="dv">0</span><span class="op">;</span> i<span class="op">&lt;</span><span class="dv">5</span><span class="op">;</span> i<span class="op">++</span>) <span class="op">{</span>
+  <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;My name is jigga-jigga &#39;</span> <span class="op">+</span> name <span class="op">+</span> <span class="st">&#39;.&#39;</span>)<span class="op">;</span>
+<span class="op">}</span></code></pre></div>
+<h2 id="variables">Variables</h2>
+<p>Variables are symbolic names for values in your application.</p>
+<p>Variables are declared with the <code>var</code> keyword (e.g. <code>var n = 5;</code>).</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> n<span class="op">;</span>
+<span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;The value of n is &#39;</span> <span class="op">+</span> n)<span class="op">;</span> <span class="co">// The value of n is undefined</span>
+
+n <span class="op">=</span> <span class="dv">5</span><span class="op">;</span>
+<span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;The value of n is &#39;</span> <span class="op">+</span> n)<span class="op">;</span> <span class="co">// The value of n is 5</span></code></pre></div>
+<p><a href="http://coding-bootcamp.pkasid.com/exercises/javascript/1_vars/">coding-bootcamp.pkasid.com/exercises/javascript/1_vars/</a><br />
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#Variables">developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#Variables</a></p>
+<h2 id="control-flow-if-statement">Control flow (if statement)</h2>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> age <span class="op">=</span> <span class="dv">25</span><span class="op">;</span>
+
+<span class="cf">if</span> (age <span class="op">&gt;=</span> <span class="dv">0</span> <span class="op">&amp;&amp;</span> <span class="op">&lt;</span> <span class="dv">18</span>) <span class="op">{</span>
+  <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;Underage&#39;</span>)<span class="op">;</span>
+<span class="op">}</span> <span class="cf">else</span> <span class="cf">if</span> (age <span class="op">&gt;=</span> <span class="dv">18</span>) <span class="op">{</span>
+  <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;Adult&#39;</span>)
+<span class="op">}</span> <span class="cf">else</span> <span class="op">{</span>
+  <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;Wow!&#39;</span>)
+<span class="op">}</span></code></pre></div>
+<p><a href="http://coding-bootcamp.pkasid.com/exercises/javascript/2_control_flow_if/">coding-bootcamp.pkasid.com/exercises/javascript/2_control_flow_if/</a><br />
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling">developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling</a></p>
+<h2 id="control-flow-loops">Control flow (loops)</h2>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> i<span class="op">;</span>
+
+<span class="cf">for</span> (i<span class="op">=</span><span class="dv">0</span><span class="op">;</span> i<span class="op">&lt;</span><span class="dv">10</span><span class="op">;</span> i<span class="op">++</span>) <span class="op">{</span>
+  <span class="va">console</span>.<span class="at">log</span>(i)<span class="op">;</span>
+<span class="op">}</span>
+
+i<span class="op">=</span><span class="dv">0</span><span class="op">;</span>
+<span class="cf">while</span> (i<span class="op">&lt;</span><span class="dv">10</span>) <span class="op">{</span>
+  <span class="va">console</span>.<span class="at">log</span>(i)<span class="op">;</span>
+  i<span class="op">++;</span>
+<span class="op">}</span></code></pre></div>
+<p><a href="http://coding-bootcamp.pkasid.com/exercises/javascript/3_control_flow_loops/">coding-bootcamp.pkasid.com/exercises/javascript/3_control_flow_loops/</a><br />
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration">developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration</a></p>
+<h2 id="functions">Functions</h2>
+<p>Functions are one of the fundamental building blocks in JavaScript.</p>
+<p>A function is a JavaScript procedure—a set of statements that performs a task or calculates a value.</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">function</span> <span class="at">square</span>(x) <span class="op">{</span>
+  <span class="cf">return</span> x <span class="op">*</span> x<span class="op">;</span>
+<span class="op">}</span></code></pre></div>
+<p><a href="http://coding-bootcamp.pkasid.com/exercises/javascript/4_functions/">coding-bootcamp.pkasid.com/exercises/javascript/4_functions/</a><br />
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions">developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions</a></p>
+<h2 id="anonymous-functions">Anonymous functions</h2>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> square <span class="op">=</span> <span class="kw">function</span> (x) <span class="op">{</span>
+  <span class="cf">return</span> x <span class="op">*</span> x<span class="op">;</span>
+<span class="op">}</span>
+
+<span class="va">console</span>.<span class="at">log</span>(square)<span class="op">;</span>    <span class="co">// function (x) { return x * x; }</span>
+<span class="va">console</span>.<span class="at">log</span>(<span class="at">square</span>(<span class="dv">2</span>))<span class="op">;</span> <span class="co">// 4</span>
+
+<span class="kw">var</span> sq <span class="op">=</span> square<span class="op">;</span>
+
+<span class="va">console</span>.<span class="at">log</span>(<span class="at">sq</span>(<span class="dv">2</span>))<span class="op">;</span>    <span class="co">// 4</span></code></pre></div>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions">developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions</a></p>
+<h2 id="objects">Objects</h2>
+<p>JavaScript is an object-based language based on prototypes instead of classes.</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="co">// &quot;Object&quot; is a prototype, &quot;myCar&quot; is an object</span>
+<span class="kw">var</span> myCar <span class="op">=</span> <span class="kw">new</span> <span class="at">Object</span>()<span class="op">;</span>
+
+<span class="co">// myCar.brand is a property</span>
+<span class="va">myCar</span>.<span class="at">brand</span> <span class="op">=</span> <span class="st">&quot;Ford&quot;</span><span class="op">;</span>
+
+<span class="co">// myCar.getBrand is a method</span>
+<span class="va">myCar</span>.<span class="at">getBrand</span> <span class="op">=</span> <span class="kw">function</span> () <span class="op">{</span>
+  <span class="cf">return</span> <span class="kw">this</span>.<span class="at">brand</span><span class="op">;</span> <span class="co">// &quot;this&quot; refers to the current object: myCar</span>
+<span class="op">}</span></code></pre></div>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects">developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects</a></p>
+
+<hr />
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+  </body>
+</html>

@@ -16,3 +16,6 @@ collections:
   exercises:
     permalink: /exercises/:path/
     output: true
+  presentations:
+    permalink: /presentations/:path/
+    output: true
