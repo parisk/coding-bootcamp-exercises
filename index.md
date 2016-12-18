@@ -5,6 +5,7 @@ layout: default
 ## Presentations
 <ul>
   <li><a href="{% link _presentations/javascript-p.html %}">JavaScript</a></li>
+  <li><a href="{% link _presentations/react-p.html %}">React</a></li>
 </ul>
 
 ## JavaScript exercises
