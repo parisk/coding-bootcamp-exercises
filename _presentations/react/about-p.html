@@ -1,0 +1,244 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>About React</title>
+
+		<link rel="stylesheet" href="../reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="../reveal.js/css/theme/white.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../reveal.js/css/print/pdf.css' : '../../reveal.js/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-markdown data-separator="^\n\n">
+					<script type="text/template">
+### Coding Bootcamp
+
+## About React
+
+
+## About React
+
+Paris Kasidiaris
+
+[@pariskasid](https://twitter.com/pariskasid) / [paris@sourcelair.com](mailto:paris@sourcelair.com)
+
+
+## Agenda
+
+* What is React
+* OK, WTF is React?
+* Where can I use React?
+* When should I use React?
+* Components
+* A simple example
+* JavaScript upgrade
+* A simpler example
+* JSX
+* An even simpler example
+
+
+## What is React
+
+A JavaScript library for building user interfaces.
+
+It was built in Facebook Inc by Jordan Walke.
+
+It got deployed on Facebook in 2011 and on Instragram in 2012.
+
+It got open sourced on JSConf US 2013.
+
+
+## OK, what the fuck is React?
+
+- Virtual DOM
+- JSX
+- One-way data flow
+
+
+## Where can I use React?
+
+1. In your front-end JavaScript applications for your components
+2. In your back-end JavaScript (Node.js) code to pre-render your components
+
+
+## When should I use React?
+
+React is a "heavy" library.
+
+It sports rich syntax and sizes 150KB minified and gzipped.
+
+You should use it in front-end applications with:
+
+1. Lots of different components
+2. Intense data flows
+
+
+## Components
+
+In React components are prototypes of DOM elements.
+
+Components relate to elements, similar to how classes relate to objects.
+
+
+## A simple example
+
+Let's create a "greeting" component, that will greet us using our name.
+
+```javascript
+var Greeting = React.createClass({
+    render: function() {
+        var tag = 'div';
+        var properties = {
+            // We use "className" because "class" is a reserved keyword
+            className: 'greeting'
+        };
+        var content = 'Hello ' + this.props.name;
+
+        return React.createElement(tag, properties, content);
+    }
+});
+
+var mountNode = document.getElementById('greeting-container');
+
+React.createElement(Greeting, { name: 'Jane' });
+```
+
+
+## That looks complex dude!
+
+I know lads.
+
+That's why it's important to know when to use this 💩.
+
+Wait though, it's not that bad actually.
+
+
+## JavaScript upgrade to ES3987
+
+The React team adopts the latest JavaScript syntax (ES6/ES2015/ES2017).
+
+It adopts new features like:
+
+- JavaScript classes (e.g. `class A extends B`)
+- Template literals
+- Arrow functions (e.g. `(a, b) => (a + b)`)
+
+Then use tools to transpile this into ES5, which is considered compatible with all browsers.
+
+
+## A simpler example
+
+Simplifying our example by using JavaScript classes and template literals.
+
+```javascript
+class SimplerGreeting extends React.Component {
+    render() {
+        var tag = 'div';
+        var properties = {
+            // We use "className" because "class" is a reserved keyword
+            className: 'greeting'
+        };
+        var content = `Hello ${this.props.name}`  // Template literals
+
+        return React.createElement(tag, properties, content);
+    }
+}
+
+var mountNode = document.getElementById('simpler-greeting-container');
+
+React.createElement(SimplerGreeting, { name: 'Jane' });
+```
+
+
+## Still complex bro
+
+I know fellas.
+
+A few expressions got much simpler and more expressive.
+
+Wait wait. Now is the good❓ part.
+
+
+## JSX
+
+JSX is a DSL (Domain Specific Language) for React.
+
+It makes HTML code valid JavaScript expressions.
+
+So now HTML code is the same to JavaScript as numbers, objects, function etc.
+
+Let's see what that means.
+
+
+## An even simpler example
+
+JSX helps us replace the confusing `React.createElement` method (and more).
+
+```javascript
+class EvenSimplerGreeting extends React.Component {
+    render() {
+        return <h1>Hello, {this.props.name}</h1>;
+    }
+}
+
+var mountNode = document.getElementById('simpler-greeting-container');
+
+ReactDOM.render(<EvenSimplerGreeting name="Even Simpler Jane" />, mountNode);
+```
+
+
+## Oh 💩, they so reduced lines.
+
+(Yep, I know folks, it's 🆒.)
+
+
+## Thank you!
+
+https://lair.io/codeandwork/react
+
+					</script>
+				</section>
+				<section>
+				<h2>License</h2>
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+				</section>
+			</div>
+		</div>
+
+		<script src="../reveal.js/lib/js/head.min.js"></script>
+		<script src="../reveal.js/js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				// Vertical centering of slides
+				center: false,
+				// Push each slide change to the browser history
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../reveal.js/plugin/markdown/marked.js' },
+					{ src: '../reveal.js/plugin/markdown/markdown.js' },
+					{ src: '../reveal.js/plugin/notes/notes.js', async: true },
+					{ src: '../reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

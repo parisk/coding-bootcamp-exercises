@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>About React</title>
+
+    <!-- Bootstrap -->
+    <!-- JQuery is required -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="../../css/pandoc-syntax.css">
+  </head>
+  <body>
+<h1 id="coding-bootcamp-about-react">Coding Bootcamp: About React</h1>
+<h2 id="about-react">About React</h2>
+<p>Paris Kasidiaris</p>
+<p><a href="https://twitter.com/pariskasid">@pariskasid</a> / <a href="mailto:paris@sourcelair.com">paris@sourcelair.com</a></p>
+<h2 id="agenda">Agenda</h2>
+<ul>
+<li>What is React</li>
+<li>OK, WTF is React?</li>
+<li>Where can I use React?</li>
+<li>When should I use React?</li>
+<li>Components</li>
+<li>A simple example</li>
+<li>JavaScript upgrade</li>
+<li>A simpler example</li>
+<li>JSX</li>
+<li>An even simpler example</li>
+</ul>
+<h2 id="what-is-react">What is React</h2>
+<p>A JavaScript library for building user interfaces.</p>
+<p>It was built in Facebook Inc by Jordan Walke.</p>
+<p>It got deployed on Facebook in 2011 and on Instragram in 2012.</p>
+<p>It got open sourced on JSConf US 2013.</p>
+<h2 id="ok-what-the-fuck-is-react">OK, what the fuck is React?</h2>
+<ul>
+<li>Virtual DOM</li>
+<li>JSX</li>
+<li>One-way data flow</li>
+</ul>
+<h2 id="where-can-i-use-react">Where can I use React?</h2>
+<ol>
+<li>In your front-end JavaScript applications for your components</li>
+<li>In your back-end JavaScript (Node.js) code to pre-render your components</li>
+</ol>
+<h2 id="when-should-i-use-react">When should I use React?</h2>
+<p>React is a &quot;heavy&quot; library.</p>
+<p>It sports rich syntax and sizes 150KB minified and gzipped.</p>
+<p>You should use it in front-end applications with:</p>
+<ol>
+<li>Lots of different components</li>
+<li>Intense data flows</li>
+</ol>
+<h2 id="components">Components</h2>
+<p>In React components are prototypes of DOM elements.</p>
+<p>Components relate to elements, similar to how classes relate to objects.</p>
+<h2 id="a-simple-example">A simple example</h2>
+<p>Let's create a &quot;greeting&quot; component, that will greet us using our name.</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> Greeting <span class="op">=</span> <span class="va">React</span>.<span class="at">createClass</span>(<span class="op">{</span>
+    <span class="dt">render</span><span class="op">:</span> <span class="kw">function</span>() <span class="op">{</span>
+        <span class="kw">var</span> tag <span class="op">=</span> <span class="st">&#39;div&#39;</span><span class="op">;</span>
+        <span class="kw">var</span> properties <span class="op">=</span> <span class="op">{</span>
+            <span class="co">// We use &quot;className&quot; because &quot;class&quot; is a reserved keyword</span>
+            <span class="dt">className</span><span class="op">:</span> <span class="st">&#39;greeting&#39;</span>
+        <span class="op">};</span>
+        <span class="kw">var</span> content <span class="op">=</span> <span class="st">&#39;Hello &#39;</span> <span class="op">+</span> <span class="kw">this</span>.<span class="va">props</span>.<span class="at">name</span><span class="op">;</span>
+
+        <span class="cf">return</span> <span class="va">React</span>.<span class="at">createElement</span>(tag<span class="op">,</span> properties<span class="op">,</span> content)<span class="op">;</span>
+    <span class="op">}</span>
+<span class="op">}</span>)<span class="op">;</span>
+
+<span class="kw">var</span> mountNode <span class="op">=</span> <span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&#39;greeting-container&#39;</span>)<span class="op">;</span>
+
+<span class="va">React</span>.<span class="at">createElement</span>(Greeting<span class="op">,</span> <span class="op">{</span> <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Jane&#39;</span> <span class="op">}</span>)<span class="op">;</span></code></pre></div>
+<h2 id="that-looks-complex-dude">That looks complex dude!</h2>
+<p>I know lads.</p>
+<p>That's why it's important to know when to use this 💩.</p>
+<p>Wait though, it's not that bad actually.</p>
+<h2 id="javascript-upgrade-to-es3987">JavaScript upgrade to ES3987</h2>
+<p>The React team adopts the latest JavaScript syntax (ES6/ES2015/ES2017).</p>
+<p>It adopts new features like:</p>
+<ul>
+<li>JavaScript classes (e.g. <code>class A extends B</code>)</li>
+<li>Template literals</li>
+<li>Arrow functions (e.g. <code>(a, b) =&gt; (a + b)</code>)</li>
+</ul>
+<p>Then use tools to transpile this into ES5, which is considered compatible with all browsers.</p>
+<h2 id="a-simpler-example">A simpler example</h2>
+<p>Simplifying our example by using JavaScript classes and template literals.</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">class</span> SimplerGreeting <span class="kw">extends</span> <span class="va">React</span>.<span class="at">Component</span> <span class="op">{</span>
+    <span class="at">render</span>() <span class="op">{</span>
+        <span class="kw">var</span> tag <span class="op">=</span> <span class="st">&#39;div&#39;</span><span class="op">;</span>
+        <span class="kw">var</span> properties <span class="op">=</span> <span class="op">{</span>
+            <span class="co">// We use &quot;className&quot; because &quot;class&quot; is a reserved keyword</span>
+            <span class="dt">className</span><span class="op">:</span> <span class="st">&#39;greeting&#39;</span>
+        <span class="op">};</span>
+        <span class="kw">var</span> content <span class="op">=</span> <span class="vs">`Hello </span><span class="sc">${</span><span class="kw">this</span>.<span class="va">props</span>.<span class="at">name</span><span class="sc">}</span><span class="vs">`</span>  <span class="co">// Template literals</span>
+
+        <span class="cf">return</span> <span class="va">React</span>.<span class="at">createElement</span>(tag<span class="op">,</span> properties<span class="op">,</span> content)<span class="op">;</span>
+    <span class="op">}</span>
+<span class="op">}</span>
+
+<span class="kw">var</span> mountNode <span class="op">=</span> <span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&#39;simpler-greeting-container&#39;</span>)<span class="op">;</span>
+
+<span class="va">React</span>.<span class="at">createElement</span>(SimplerGreeting<span class="op">,</span> <span class="op">{</span> <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Jane&#39;</span> <span class="op">}</span>)<span class="op">;</span></code></pre></div>
+<h2 id="still-complex-bro">Still complex bro</h2>
+<p>I know fellas.</p>
+<p>A few expressions got much simpler and more expressive.</p>
+<p>Wait wait. Now is the good❓ part.</p>
+<h2 id="jsx">JSX</h2>
+<p>JSX is a DSL (Domain Specific Language) for React.</p>
+<p>It makes HTML code valid JavaScript expressions.</p>
+<p>So now HTML code is the same to JavaScript as numbers, objects, function etc.</p>
+<p>Let's see what that means.</p>
+<h2 id="an-even-simpler-example">An even simpler example</h2>
+<p>JSX helps us replace the confusing <code>React.createElement</code> method (and more).</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">class</span> EvenSimplerGreeting <span class="kw">extends</span> <span class="va">React</span>.<span class="at">Component</span> <span class="op">{</span>
+    <span class="at">render</span>() <span class="op">{</span>
+        <span class="cf">return</span> <span class="op">&lt;</span>h1<span class="op">&gt;</span>Hello<span class="op">,</span> <span class="op">{</span><span class="kw">this</span>.<span class="va">props</span>.<span class="at">name</span><span class="op">}&lt;</span><span class="ss">/h1&gt;;</span>
+<span class="ss">    }</span>
+<span class="ss">}</span>
+
+<span class="ss">var mountNode = document.getElementById</span><span class="sc">(</span><span class="ss">&#39;simpler-greeting-container&#39;</span><span class="sc">)</span><span class="ss">;</span>
+
+<span class="ss">ReactDOM.render</span><span class="sc">(</span><span class="ss">&lt;EvenSimplerGreeting name=&quot;Even Simpler Jane&quot; /</span><span class="op">&gt;,</span> mountNode)<span class="op">;</span></code></pre></div>
+<h2 id="oh-they-so-reduced-lines.">Oh 💩, they so reduced lines.</h2>
+<p>(Yep, I know folks, it's 🆒.)</p>
+<h2 id="thank-you">Thank you!</h2>
+<p><a href="https://lair.io/codeandwork/react" class="uri">https://lair.io/codeandwork/react</a></p>
+
+<hr />
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+  </body>
+</html>
