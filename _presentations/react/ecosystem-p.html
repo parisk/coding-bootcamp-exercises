@@ -31,6 +31,160 @@
 ## The React ecosystem
 
 
+## The React ecosystem
+
+Paris Kasidiaris
+
+[@pariskasid](https://twitter.com/pariskasid) / [paris@sourcelair.com](mailto:paris@sourcelair.com)
+
+
+## Agenda
+
+* A brief recap on React
+* Improving the React experience
+* A brief intro to Node.js
+* JavaScript compilers
+* JavaScript bundlers
+* A full example
+
+
+## A brief recap on React
+
+A JavaScript library for building user interfaces.
+
+```javascript
+class EvenSimplerGreeting extends React.Component {
+    render() {
+        return <h1>Hello, {this.props.name}</h1>;
+    }
+}
+
+var mountNode = document.getElementById('simpler-greeting-container');
+
+ReactDOM.render(<EvenSimplerGreeting name="Even Simpler Jane" />, mountNode);
+```
+
+
+## Improving the React experience
+
+How can we use all these features (ES6, JSX) in all browsers?
+
+How can we break our code into smaller pieces?
+
+This is what we will learn today.
+
+
+## A brief intro to Node.js
+
+Node.js is a JavaScript interpreter that runs outside of the browser.
+
+It can be ran locally on our computer, on the server etc.
+
+We can use it to achieve the same results with C# or Java, but... with JavaScript.
+
+**All of the tools we will see use Node.js**
+
+
+## JavaScript compilers
+
+**JavaScript version A → JavaScript version B**
+
+```javascript
+// In
+class Person {
+  getName() {
+    return this.name;
+  }
+}
+
+// Out
+"use strict";
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Person = function () {
+  function Person() {
+    _classCallCheck(this, Person);
+  }
+
+  _createClass(Person, [{
+    key: "getName",
+    value: function getName() {
+      return this.name;
+    }
+  }]);
+
+  return Person;
+}();
+```
+
+Today we will deal with Babel.
+
+
+## Babel.js
+
+Babel is a JavaScript compiler written in Node.js.
+
+Babel will do two things for us.
+
+1. Transform ES6 to ES5
+2. Transform JSX to JavaScript
+
+Let's take it for a spin at https://babeljs.io.
+
+
+## JavaScript bundlers
+
+**a.js + b.js → ab.js**
+
+**`a.js`**
+
+```javascript
+export var lol = 'lol2'
+```
+
+**`b.js`**
+
+```javascript
+import * as a from './a';
+
+var lol = 'lol1';
+
+console.log(lol);
+console.log(a.lol);
+```
+
+**`ab.js`**
+
+```javascript
+var lol$1 = 'lol2';
+var lol$$1 = 'lol1';
+console.log(lol$$1);
+console.log(lol$1);
+```
+
+Today we will deal with Rollup.js.
+
+
+## Rollup.js
+
+Rollup.js is a JavaScript bundler written in Node.js.
+
+Rollup will do one job for us:
+
+Combine our JavaScript **modules** into a single file (the bundle).
+
+Let's take it for a spin at http://rollupjs.org/.
+
+
+## A complete example
+
+Let's see a complete example!
+
+
+## Thank you!
 
 					</script>
 				</section>

@@ -30,6 +30,102 @@
   </head>
   <body>
 <h1 id="coding-bootcamp-the-react-ecosystem">Coding Bootcamp: The React ecosystem</h1>
+<h2 id="the-react-ecosystem">The React ecosystem</h2>
+<p>Paris Kasidiaris</p>
+<p><a href="https://twitter.com/pariskasid">@pariskasid</a> / <a href="mailto:paris@sourcelair.com">paris@sourcelair.com</a></p>
+<h2 id="agenda">Agenda</h2>
+<ul>
+<li>A brief recap on React</li>
+<li>Improving the React experience</li>
+<li>A brief intro to Node.js</li>
+<li>JavaScript compilers</li>
+<li>JavaScript bundlers</li>
+<li>A full example</li>
+</ul>
+<h2 id="a-brief-recap-on-react">A brief recap on React</h2>
+<p>A JavaScript library for building user interfaces.</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">class</span> EvenSimplerGreeting <span class="kw">extends</span> <span class="va">React</span>.<span class="at">Component</span> <span class="op">{</span>
+    <span class="at">render</span>() <span class="op">{</span>
+        <span class="cf">return</span> <span class="op">&lt;</span>h1<span class="op">&gt;</span>Hello<span class="op">,</span> <span class="op">{</span><span class="kw">this</span>.<span class="va">props</span>.<span class="at">name</span><span class="op">}&lt;</span><span class="ss">/h1&gt;;</span>
+<span class="ss">    }</span>
+<span class="ss">}</span>
+
+<span class="ss">var mountNode = document.getElementById</span><span class="sc">(</span><span class="ss">&#39;simpler-greeting-container&#39;</span><span class="sc">)</span><span class="ss">;</span>
+
+<span class="ss">ReactDOM.render</span><span class="sc">(</span><span class="ss">&lt;EvenSimplerGreeting name=&quot;Even Simpler Jane&quot; /</span><span class="op">&gt;,</span> mountNode)<span class="op">;</span></code></pre></div>
+<h2 id="improving-the-react-experience">Improving the React experience</h2>
+<p>How can we use all these features (ES6, JSX) in all browsers?</p>
+<p>How can we break our code into smaller pieces?</p>
+<p>This is what we will learn today.</p>
+<h2 id="a-brief-intro-to-node.js">A brief intro to Node.js</h2>
+<p>Node.js is a JavaScript interpreter that runs outside of the browser.</p>
+<p>It can be ran locally on our computer, on the server etc.</p>
+<p>We can use it to achieve the same results with C# or Java, but... with JavaScript.</p>
+<p><strong>All of the tools we will see use Node.js</strong></p>
+<h2 id="javascript-compilers">JavaScript compilers</h2>
+<p><strong>JavaScript version A → JavaScript version B</strong></p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="co">// In</span>
+<span class="kw">class</span> Person <span class="op">{</span>
+  <span class="at">getName</span>() <span class="op">{</span>
+    <span class="cf">return</span> <span class="kw">this</span>.<span class="at">name</span><span class="op">;</span>
+  <span class="op">}</span>
+<span class="op">}</span>
+
+<span class="co">// Out</span>
+<span class="st">&quot;use strict&quot;</span><span class="op">;</span>
+
+<span class="kw">var</span> _createClass <span class="op">=</span> <span class="kw">function</span> () <span class="op">{</span> <span class="kw">function</span> <span class="at">defineProperties</span>(target<span class="op">,</span> props) <span class="op">{</span> <span class="cf">for</span> (<span class="kw">var</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="va">props</span>.<span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) <span class="op">{</span> <span class="kw">var</span> descriptor <span class="op">=</span> props[i]<span class="op">;</span> <span class="va">descriptor</span>.<span class="at">enumerable</span> <span class="op">=</span> <span class="va">descriptor</span>.<span class="at">enumerable</span> <span class="op">||</span> <span class="kw">false</span><span class="op">;</span> <span class="va">descriptor</span>.<span class="at">configurable</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span> <span class="cf">if</span> (<span class="st">&quot;value&quot;</span> <span class="kw">in</span> descriptor) <span class="va">descriptor</span>.<span class="at">writable</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span> <span class="va">Object</span>.<span class="at">defineProperty</span>(target<span class="op">,</span> <span class="va">descriptor</span>.<span class="at">key</span><span class="op">,</span> descriptor)<span class="op">;</span> <span class="op">}</span> <span class="op">}</span> <span class="cf">return</span> <span class="kw">function</span> (Constructor<span class="op">,</span> protoProps<span class="op">,</span> staticProps) <span class="op">{</span> <span class="cf">if</span> (protoProps) <span class="at">defineProperties</span>(<span class="va">Constructor</span>.<span class="at">prototype</span><span class="op">,</span> protoProps)<span class="op">;</span> <span class="cf">if</span> (staticProps) <span class="at">defineProperties</span>(Constructor<span class="op">,</span> staticProps)<span class="op">;</span> <span class="cf">return</span> Constructor<span class="op">;</span> <span class="op">};</span> <span class="op">}</span>()<span class="op">;</span>
+
+<span class="kw">function</span> <span class="at">_classCallCheck</span>(instance<span class="op">,</span> Constructor) <span class="op">{</span> <span class="cf">if</span> (<span class="op">!</span>(instance <span class="kw">instanceof</span> Constructor)) <span class="op">{</span> <span class="cf">throw</span> <span class="kw">new</span> <span class="at">TypeError</span>(<span class="st">&quot;Cannot call a class as a function&quot;</span>)<span class="op">;</span> <span class="op">}</span> <span class="op">}</span>
+
+<span class="kw">var</span> Person <span class="op">=</span> <span class="kw">function</span> () <span class="op">{</span>
+  <span class="kw">function</span> <span class="at">Person</span>() <span class="op">{</span>
+    <span class="at">_classCallCheck</span>(<span class="kw">this</span><span class="op">,</span> Person)<span class="op">;</span>
+  <span class="op">}</span>
+
+  <span class="at">_createClass</span>(Person<span class="op">,</span> [<span class="op">{</span>
+    <span class="dt">key</span><span class="op">:</span> <span class="st">&quot;getName&quot;</span><span class="op">,</span>
+    <span class="dt">value</span><span class="op">:</span> <span class="kw">function</span> <span class="at">getName</span>() <span class="op">{</span>
+      <span class="cf">return</span> <span class="kw">this</span>.<span class="at">name</span><span class="op">;</span>
+    <span class="op">}</span>
+  <span class="op">}</span>])<span class="op">;</span>
+
+  <span class="cf">return</span> Person<span class="op">;</span>
+<span class="op">}</span>()<span class="op">;</span></code></pre></div>
+<p>Today we will deal with Babel.</p>
+<h2 id="babel.js">Babel.js</h2>
+<p>Babel is a JavaScript compiler written in Node.js.</p>
+<p>Babel will do two things for us.</p>
+<ol>
+<li>Transform ES6 to ES5</li>
+<li>Transform JSX to JavaScript</li>
+</ol>
+<p>Let's take it for a spin at <a href="https://babeljs.io" class="uri">https://babeljs.io</a>.</p>
+<h2 id="javascript-bundlers">JavaScript bundlers</h2>
+<p><strong>a.js + b.js → ab.js</strong></p>
+<p><strong><code>a.js</code></strong></p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="im">export</span> <span class="kw">var</span> lol <span class="op">=</span> <span class="st">&#39;lol2&#39;</span></code></pre></div>
+<p><strong><code>b.js</code></strong></p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="im">import</span> <span class="op">*</span> <span class="im">as</span> a <span class="im">from</span> <span class="st">&#39;./a&#39;</span><span class="op">;</span>
+
+<span class="kw">var</span> lol <span class="op">=</span> <span class="st">&#39;lol1&#39;</span><span class="op">;</span>
+
+<span class="va">console</span>.<span class="at">log</span>(lol)<span class="op">;</span>
+<span class="va">console</span>.<span class="at">log</span>(<span class="va">a</span>.<span class="at">lol</span>)<span class="op">;</span></code></pre></div>
+<p><strong><code>ab.js</code></strong></p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> lol$1 <span class="op">=</span> <span class="st">&#39;lol2&#39;</span><span class="op">;</span>
+<span class="kw">var</span> lol$$1 <span class="op">=</span> <span class="st">&#39;lol1&#39;</span><span class="op">;</span>
+<span class="va">console</span>.<span class="at">log</span>(lol$$1)<span class="op">;</span>
+<span class="va">console</span>.<span class="at">log</span>(lol$1)<span class="op">;</span></code></pre></div>
+<p>Today we will deal with Rollup.js.</p>
+<h2 id="rollup.js">Rollup.js</h2>
+<p>Rollup.js is a JavaScript bundler written in Node.js.</p>
+<p>Rollup will do one job for us:</p>
+<p>Combine our JavaScript <strong>modules</strong> into a single file (the bundle).</p>
+<p>Let's take it for a spin at <a href="http://rollupjs.org/" class="uri">http://rollupjs.org/</a>.</p>
+<h2 id="a-complete-example">A complete example</h2>
+<p>Let's see a complete example!</p>
+<h2 id="thank-you">Thank you!</h2>
 
 <hr />
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
