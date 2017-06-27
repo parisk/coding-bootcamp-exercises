@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Introduction to JavaScript</title>
+
+    <!-- Bootstrap -->
+    <!-- JQuery is required -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="../css/pandoc-syntax.css">
+  </head>
+  <body>
+<h1 id="coding-bootcamp-introduction-to-javascript">Coding Bootcamp: Introduction to JavaScript</h1>
+<h2 id="about-javascript">About JavaScript</h2>
+<p>Paris Kasidiaris</p>
+<p><a href="https://twitter.com/pariskasid">@pariskasid</a> / <script type="text/javascript">
+<!--
+h='&#x73;&#x6f;&#x75;&#114;&#x63;&#x65;&#108;&#x61;&#x69;&#114;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#112;&#x61;&#114;&#x69;&#x73;';e=n+a+h;
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<script type="text/javascript">
+<!--
+h='&#x73;&#x6f;&#x75;&#114;&#x63;&#x65;&#108;&#x61;&#x69;&#114;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#112;&#x61;&#114;&#x69;&#x73;';e=n+a+h;
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
+// -->
+</script><noscript>&#112;&#x61;&#114;&#x69;&#x73;&#32;&#x61;&#116;&#32;&#x73;&#x6f;&#x75;&#114;&#x63;&#x65;&#108;&#x61;&#x69;&#114;&#32;&#100;&#x6f;&#116;&#32;&#x63;&#x6f;&#x6d;</noscript>'+'<\/'+'a'+'>');
+// -->
+</script><noscript>&#60;&#x73;&#x63;&#114;&#x69;&#112;&#116;&#32;&#116;&#x79;&#112;&#x65;&#x3d;&#34;&#116;&#x65;&#120;&#116;&#x2f;&#106;&#x61;&#118;&#x61;&#x73;&#x63;&#114;&#x69;&#112;&#116;&#34;&#62;&#10;&#60;&#x21;&#x2d;&#x2d;&#10;&#104;&#x3d;&#x27;&#x73;&#x6f;&#x75;&#114;&#x63;&#x65;&#108;&#x61;&#x69;&#114;&#46;&#x63;&#x6f;&#x6d;&#x27;&#x3b;&#x61;&#x3d;&#x27;&#64;&#x27;&#x3b;&#110;&#x3d;&#x27;&#112;&#x61;&#114;&#x69;&#x73;&#x27;&#x3b;&#x65;&#x3d;&#110;&#x2b;&#x61;&#x2b;&#104;&#x3b;&#10;&#100;&#x6f;&#x63;&#x75;&#x6d;&#x65;&#110;&#116;&#46;&#x77;&#114;&#x69;&#116;&#x65;&#40;&#x27;&#60;&#x61;&#32;&#104;&#x27;&#x2b;&#x27;&#114;&#x65;&#102;&#x27;&#x2b;&#x27;&#x3d;&#34;&#x6d;&#x61;&#x27;&#x2b;&#x27;&#x69;&#108;&#116;&#x6f;&#x27;&#x2b;&#x27;&#58;&#x27;&#x2b;&#x65;&#x2b;&#x27;&#34;&#62;&#x27;&#x2b;&#x65;&#x2b;&#x27;&#60;&#92;&#x2f;&#x27;&#x2b;&#x27;&#x61;&#x27;&#x2b;&#x27;&#62;&#x27;&#x29;&#x3b;&#10;&#x2f;&#x2f;&#32;&#x2d;&#x2d;&#62;&#10;&#60;&#x2f;&#x73;&#x63;&#114;&#x69;&#112;&#116;&#62;&#60;&#110;&#x6f;&#x73;&#x63;&#114;&#x69;&#112;&#116;&#62;&#112;&#x61;&#114;&#x69;&#x73;&#32;&#x61;&#116;&#32;&#x73;&#x6f;&#x75;&#114;&#x63;&#x65;&#108;&#x61;&#x69;&#114;&#32;&#100;&#x6f;&#116;&#32;&#x63;&#x6f;&#x6d;&#60;&#x2f;&#110;&#x6f;&#x73;&#x63;&#114;&#x69;&#112;&#116;&#62;&#32;&#40;&#112;&#x61;&#114;&#x69;&#x73;&#32;&#x61;&#116;&#32;&#x73;&#x6f;&#x75;&#114;&#x63;&#x65;&#108;&#x61;&#x69;&#114;&#32;&#100;&#x6f;&#116;&#32;&#x63;&#x6f;&#x6d;&#x29;</noscript></p>
+<h2 id="agenda">Agenda</h2>
+<ul>
+<li>What is JavaScript<br /></li>
+<li>About JavaScript applications<br /></li>
+<li>What JavaScript looks like<br /></li>
+<li>Values, Primitives and Objects<br /></li>
+<li>Prototypes vs. Classes<br /></li>
+<li>Control flow<br /></li>
+<li>Functions</li>
+</ul>
+<h2 id="what-is-javascript">What is JavaScript</h2>
+<p>A lightweight, interpreted, programming language.</p>
+<ul>
+<li>It is prototype-based, multi-paradigm and dynamic<br /></li>
+<li>It is known as the scripting language for Web pages<br /></li>
+<li>It is used in non-browser environments also, like Νode.js and CouchDB</li>
+</ul>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">developer.mozilla.org/en-US/docs/Web/JavaScript</a></p>
+<h2 id="about-javascript-applications">About JavaScript applications</h2>
+<p>You can build <strong>any type of application</strong> with JavaScript</p>
+<ul>
+<li>Interactive web applications (Browser JavaScript)<br /></li>
+<li>Server applications (Node.js)<br /></li>
+<li>Mobile applications (Ionic)<br /></li>
+<li>Desktop applications (Electron)</li>
+</ul>
+<h2 id="what-javascript-looks-like">What JavaScript looks like</h2>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> name = <span class="st">&#39;Paris&#39;</span>;
+<span class="kw">let</span> age = <span class="dv">25</span>;
+<span class="kw">const</span> greeting = `Hi, I am ${name} and I am ${age} years <span class="ot">old</span>.`;
+
+<span class="ot">console</span>.<span class="fu">log</span>(greeting);</code></pre>
+<h2 id="javascript-values">JavaScript values</h2>
+<p>In JavaScript we can store values with these statements: <code>var</code>, <code>let</code> and <code>const</code>.</p>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> a = <span class="dv">1</span>;  <span class="co">// Declare variable in global scope and initialize it</span>
+<span class="kw">let</span> b = <span class="dv">2</span>;  <span class="co">// Declare variable in block scope and initialize it</span>
+<span class="kw">const</span> c = <span class="dv">3</span>;  <span class="co">// Declare constant in block scope and initialize it</span></code></pre>
+<p>Values can either be <strong>Primitives</strong> or <strong>Objects</strong>.</p>
+<h2 id="primitive-values">Primitive Values</h2>
+<p>A <strong>primitive</strong> is data that is not an object and has no methods.</p>
+<p>Example primitives: <code>1</code>, <code>&quot;grace&quot;</code>, <code>true</code>, <code>null</code>, <code>undefined</code>.</p>
+<p>Usually primitive vaues are wrapped in objects.</p>
+<h2 id="object-values">Object Values</h2>
+<p>Object refers to a data structure containing data and instructions for working with the data.</p>
+<p>Example objects: <code>new Date()</code>, <code>new XMLHTTPRequest&quot;</code>.</p>
+<h2 id="prototypes-vs.-classes">Prototypes vs. Classes</h2>
+<p>JavaScript objects are based on Prototypes, instead of Classes.</p>
+<p>Prototypes are less powerful, but are much more lightweight entities.</p>
+<h2 id="control-flow---if-statements">Control flow - If statements</h2>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">const</span> age = <span class="dv">18</span>;
+
+<span class="kw">if</span> (age &lt;= <span class="dv">18</span>) {
+  <span class="ot">console</span>.<span class="fu">log</span>(<span class="st">&#39;Not adult&#39;</span>);
+} <span class="kw">else</span> {
+  <span class="ot">console</span>.<span class="fu">log</span>(<span class="st">&#39;Adult&#39;</span>);
+}</code></pre>
+<h2 id="control-flow---switch-statement">Control flow - Switch statement</h2>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">const</span> theAnswerToEverything = <span class="dv">42</span>;
+
+<span class="kw">switch</span> theAnswerToEverything{
+  <span class="kw">case</span> <span class="dv">42</span>:
+    <span class="ot">console</span>.<span class="fu">log</span>(<span class="st">&#39;That is right&#39;</span>);
+    <span class="kw">break</span>;
+  <span class="kw">default</span>:
+    <span class="ot">console</span>.<span class="fu">log</span>(<span class="st">&#39;Not right&#39;</span>);
+    <span class="kw">break</span>;
+}</code></pre>
+<h2 id="control-flow---for-loops">Control flow - For loops</h2>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">const</span> stopAt = <span class="dv">42</span>;
+
+<span class="kw">for</span> (<span class="kw">let</span> counter=<span class="dv">0</span>; counter&lt;=stopAt; counter++) {
+  <span class="ot">console</span>.<span class="fu">log</span>(`Counter is ${counter}`);
+}</code></pre>
+<h2 id="control-flow---while-loops">Control flow - While loops</h2>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">const</span> stopAt = <span class="dv">42</span>;
+<span class="kw">let</span> counter = <span class="dv">0</span>;
+
+<span class="kw">while</span> (counter&lt;=stopAt) {
+  <span class="ot">console</span>.<span class="fu">log</span>(`Counter is ${counter}`);
+}</code></pre>
+<h2 id="functions">Functions</h2>
+<p>Functions are objects that can also be called.</p>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">function</span> <span class="fu">square</span>(x) {
+  <span class="kw">return</span> x*x;
+}
+
+<span class="fu">square</span>(<span class="dv">2</span>);</code></pre>
+<h2 id="functions-as-constructors">Functions as Constructors</h2>
+<p>Functions can also act as prototype constructors to create objects.</p>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">function</span> <span class="fu">Car</span>(brand) {
+  <span class="kw">this</span>.<span class="fu">brand</span> = brand;
+}
+
+<span class="kw">let</span> car = <span class="kw">new</span> <span class="fu">Car</span>(<span class="st">&#39;tesla&#39;</span>);
+
+<span class="ot">console</span>.<span class="fu">log</span>(<span class="ot">car</span>.<span class="fu">brand</span>);</code></pre>
+<h2 id="anonymous-functions">Anonymous Functions</h2>
+<p>Functions can also be anonymous -- function name is redundant.</p>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">let</span> Car = <span class="kw">function</span> (brand) {
+  <span class="kw">this</span>.<span class="fu">brand</span> = brand;
+}
+
+<span class="kw">let</span> car = <span class="kw">new</span> <span class="fu">Car</span>(<span class="st">&#39;tesla&#39;</span>);
+
+<span class="ot">console</span>.<span class="fu">log</span>(Car);
+<span class="ot">console</span>.<span class="fu">log</span>(car);</code></pre>
+<h2 id="thank-you">Thank you 😁</h2>
+
+<hr />
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+  </body>
+</html>

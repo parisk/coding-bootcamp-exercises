@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>JavaScript in the browser</title>
+
+    <!-- Bootstrap -->
+    <!-- JQuery is required -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="../css/pandoc-syntax.css">
+  </head>
+  <body>
+<h1 id="coding-bootcamp-javascript-in-the-browser">Coding Bootcamp: JavaScript in the browser</h1>
+<h2 id="asynchronous-javascript">Asynchronous JavaScript</h2>
+<p>Paris Kasidiaris</p>
+<p><a href="https://twitter.com/pariskasid">@pariskasid</a> / <script type="text/javascript">
+<!--
+h='&#x73;&#x6f;&#x75;&#114;&#x63;&#x65;&#108;&#x61;&#x69;&#114;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#112;&#x61;&#114;&#x69;&#x73;';e=n+a+h;
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<script type="text/javascript">
+<!--
+h='&#x73;&#x6f;&#x75;&#114;&#x63;&#x65;&#108;&#x61;&#x69;&#114;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#112;&#x61;&#114;&#x69;&#x73;';e=n+a+h;
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
+// -->
+</script><noscript>&#112;&#x61;&#114;&#x69;&#x73;&#32;&#x61;&#116;&#32;&#x73;&#x6f;&#x75;&#114;&#x63;&#x65;&#108;&#x61;&#x69;&#114;&#32;&#100;&#x6f;&#116;&#32;&#x63;&#x6f;&#x6d;</noscript>'+'<\/'+'a'+'>');
+// -->
+</script><noscript>&#60;&#x73;&#x63;&#114;&#x69;&#112;&#116;&#32;&#116;&#x79;&#112;&#x65;&#x3d;&#34;&#116;&#x65;&#120;&#116;&#x2f;&#106;&#x61;&#118;&#x61;&#x73;&#x63;&#114;&#x69;&#112;&#116;&#34;&#62;&#10;&#60;&#x21;&#x2d;&#x2d;&#10;&#104;&#x3d;&#x27;&#x73;&#x6f;&#x75;&#114;&#x63;&#x65;&#108;&#x61;&#x69;&#114;&#46;&#x63;&#x6f;&#x6d;&#x27;&#x3b;&#x61;&#x3d;&#x27;&#64;&#x27;&#x3b;&#110;&#x3d;&#x27;&#112;&#x61;&#114;&#x69;&#x73;&#x27;&#x3b;&#x65;&#x3d;&#110;&#x2b;&#x61;&#x2b;&#104;&#x3b;&#10;&#100;&#x6f;&#x63;&#x75;&#x6d;&#x65;&#110;&#116;&#46;&#x77;&#114;&#x69;&#116;&#x65;&#40;&#x27;&#60;&#x61;&#32;&#104;&#x27;&#x2b;&#x27;&#114;&#x65;&#102;&#x27;&#x2b;&#x27;&#x3d;&#34;&#x6d;&#x61;&#x27;&#x2b;&#x27;&#x69;&#108;&#116;&#x6f;&#x27;&#x2b;&#x27;&#58;&#x27;&#x2b;&#x65;&#x2b;&#x27;&#34;&#62;&#x27;&#x2b;&#x65;&#x2b;&#x27;&#60;&#92;&#x2f;&#x27;&#x2b;&#x27;&#x61;&#x27;&#x2b;&#x27;&#62;&#x27;&#x29;&#x3b;&#10;&#x2f;&#x2f;&#32;&#x2d;&#x2d;&#62;&#10;&#60;&#x2f;&#x73;&#x63;&#114;&#x69;&#112;&#116;&#62;&#60;&#110;&#x6f;&#x73;&#x63;&#114;&#x69;&#112;&#116;&#62;&#112;&#x61;&#114;&#x69;&#x73;&#32;&#x61;&#116;&#32;&#x73;&#x6f;&#x75;&#114;&#x63;&#x65;&#108;&#x61;&#x69;&#114;&#32;&#100;&#x6f;&#116;&#32;&#x63;&#x6f;&#x6d;&#60;&#x2f;&#110;&#x6f;&#x73;&#x63;&#114;&#x69;&#112;&#116;&#62;&#32;&#40;&#112;&#x61;&#114;&#x69;&#x73;&#32;&#x61;&#116;&#32;&#x73;&#x6f;&#x75;&#114;&#x63;&#x65;&#108;&#x61;&#x69;&#114;&#32;&#100;&#x6f;&#116;&#32;&#x63;&#x6f;&#x6d;&#x29;</noscript></p>
+<h2 id="agenda">Agenda</h2>
+<ul>
+<li>Intro<br /></li>
+<li>DOM event listeners<br /></li>
+<li>Important DOM events<br /></li>
+<li>Asynchronous HTTP requests</li>
+</ul>
+<h2 id="intro">Intro</h2>
+<p>JavaScript is a single-threaded language.</p>
+<p>Only one line of code is being run at a given time.</p>
+<p>We need to interact with user input though in real time.</p>
+<h2 id="the-dom-event-system">The DOM event system</h2>
+<p>We use DOM events to react on user input (e.g. click on a button).</p>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> button = <span class="ot">document</span>.<span class="fu">getElementById</span>(<span class="st">&#39;mybutton&#39;</span>);
+
+<span class="ot">button</span>.<span class="fu">onclick</span> = <span class="kw">function</span> () {
+  <span class="kw">this</span>.<span class="fu">textContent</span> = <span class="st">&#39;Clicked!&#39;</span>;
+}
+
+<span class="co">// This is the preferred syntax</span>
+<span class="ot">button</span>.<span class="fu">addEventListener</span>(<span class="st">&#39;click&#39;</span>, <span class="kw">function</span> () {
+  <span class="kw">this</span>.<span class="fu">textContent</span> = <span class="st">&#39;Clicked!&#39;</span>;
+});</code></pre>
+<h2 id="important-dom-events">Important DOM events</h2>
+<ul>
+<li><code>load</code>: Triggered on <code>window</code> when it finishes loading<br /></li>
+<li><code>click</code>: Triggered on an element when it gets clicked<br /></li>
+<li><code>focus</code>: Triggered on an element when it receives focus<br /></li>
+<li><code>keypress</code>: Triggered on a focused element when the user presses a key</li>
+</ul>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/Events">developer.mozilla.org/en-US/docs/Web/Events</a></p>
+<h2 id="asynchronous-http-requests">Asynchronous HTTP requests</h2>
+<p>Some times we need to &quot;talk&quot; with the server without reloading the page.</p>
+<p>This is where we use asynchronous HTTP, also known as AJAX or XHR.</p>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> exampleRequest = <span class="kw">new</span> <span class="fu">XMLHttpRequest</span>();
+<span class="kw">var</span> responseText = <span class="ot">document</span>.<span class="fu">getElementById</span>(<span class="st">&#39;response-text&#39;</span>);
+
+<span class="ot">exampleRequest</span>.<span class="fu">addEventListener</span>(<span class="st">&#39;load&#39;</span>, <span class="kw">function</span> () {
+  <span class="ot">responseText</span>.<span class="fu">textContent</span> = <span class="kw">this</span>.<span class="fu">responseText</span>;
+});
+<span class="ot">exampleRequest</span>.<span class="fu">open</span>(<span class="st">&#39;GET&#39;</span>, <span class="st">&#39;http://www.example.org/example.txt&#39;</span>);
+<span class="ot">exampleRequest</span>.<span class="fu">send</span>();</code></pre>
+
+<hr />
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+  </body>
+</html>
