@@ -30,7 +30,7 @@
   </head>
   <body>
 <h1 id="coding-bootcamp-javascript-in-the-browser">Coding Bootcamp: JavaScript in the browser</h1>
-<h2 id="asynchronous-javascript">Asynchronous JavaScript</h2>
+<h2 id="javascript-in-the-browser">JavaScript in the browser</h2>
 <p>Paris Kasidiaris</p>
 <p><a href="https://twitter.com/pariskasid">@pariskasid</a> / <script type="text/javascript">
 <!--
@@ -46,14 +46,67 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 <h2 id="agenda">Agenda</h2>
 <ul>
 <li>Intro<br /></li>
-<li>DOM event listeners<br /></li>
-<li>Important DOM events<br /></li>
-<li>Asynchronous HTTP requests</li>
+<li>The DOM<br /></li>
+<li>Asynchrony in JavaScript</li>
 </ul>
 <h2 id="intro">Intro</h2>
-<p>JavaScript is a single-threaded language.</p>
+<p>The most ubiquitous JavaScript environment is the browser.</p>
+<p>Every supported browser carries a JavaScript interpreter.</p>
+<p>JavaScript in the browser lets us create interactive applications.</p>
+<h2 id="about-the-dom">About the DOM</h2>
+<p>The Document Object Model (DOM) is a programming interface for HTML.</p>
+<p>It provides a structured representation of the document (e.g. a web page) as a tree.</p>
+<p>It provides ready methods that let us &quot;play&quot; with the document tree.</p>
+<h2 id="accessing-the-dom">Accessing the DOM</h2>
+<p>The browser provides us with access to DOM objects.</p>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="co">// Update the page&#39;s title</span>
+<span class="ot">document</span>.<span class="fu">title</span> = <span class="st">&#39;Hello!&#39;</span>;
+
+<span class="co">// Refresh the current tab</span>
+<span class="ot">window</span>.<span class="fu">reload</span>();
+
+<span class="co">// Get the element with id=&quot;button&quot;</span>
+<span class="kw">var</span> button = <span class="ot">document</span>.<span class="fu">getElementById</span>(<span class="st">&#39;button&#39;</span>);
+
+<span class="co">// Update the button&#39;s text</span>
+<span class="ot">button</span>.<span class="fu">textContent</span> = <span class="st">&#39;Push the button!&#39;</span></code></pre>
+<h2 id="accessing-html-elements">Accessing HTML elements</h2>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="co">// Accessing an HTML element by ID</span>
+<span class="kw">var</span> d = <span class="ot">document</span>.<span class="fu">getElementById</span>(<span class="st">&#39;something&#39;</span>);
+
+<span class="co">// Accessing HTML elements by class name</span>
+<span class="kw">var</span> prettyElements = <span class="ot">document</span>.<span class="fu">getElementsByClassName</span>(<span class="st">&#39;pretty&#39;</span>);
+
+<span class="co">// Accessing HTML elements by CSS selectors</span>
+<span class="kw">var</span> prettyDivs = <span class="ot">document</span>.<span class="fu">querySelectorAll</span>(<span class="st">&#39;div.pretty&#39;</span>);</code></pre>
+<h2 id="creating-html-elements">Creating HTML elements</h2>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="co">// Create a div element</span>
+<span class="kw">var</span> d = <span class="ot">document</span>.<span class="fu">createElement</span>(<span class="st">&#39;div&#39;</span>);
+
+<span class="co">// Create an image element</span>
+<span class="kw">var</span> img = <span class="ot">document</span>.<span class="fu">createElement</span>(<span class="st">&#39;img&#39;</span>);
+
+<span class="co">// Add the above elements into the web page</span>
+<span class="ot">document</span>.<span class="ot">body</span>.<span class="fu">appendChild</span>(d);
+<span class="ot">d</span>.<span class="fu">appendChild</span>(img);</code></pre>
+<h2 id="modifying-html-elements">Modifying HTML elements</h2>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="co">// Modify the text of an HTML element</span>
+<span class="ot">d</span>.<span class="fu">textConent</span> = <span class="st">&#39;This is a div!&#39;</span>;
+
+<span class="co">// Modify an attribute of an HTML element</span>
+<span class="ot">img</span>.<span class="fu">src</span> = <span class="st">&#39;https://github.com/parisk.png&#39;</span>;
+
+<span class="co">// Modify the HTML contents of an element</span>
+<span class="ot">d</span>.<span class="fu">innerHTML</span> = <span class="st">&#39;This is some &lt;strong&gt;bold test&lt;/strong&gt;.&#39;</span>;</code></pre>
+<p><a href="http://coding-bootcamp.pkasid.com/exercises/javascript/6_dom_modify/">coding-bootcamp.pkasid.com/exercises/javascript/6_dom_modify/</a><br /><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement">developer.mozilla.org/en-US/docs/Web/API/HTMLElement</a></p>
+<h2 id="learning-more-about-the-dom">Learning more about the DOM</h2>
+<p>The Document Object Model is a <strong>huge</strong> resource.</p>
+<p>The Mozilla Developer Network is your best friend.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model">developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model</a></p>
+<h2 id="about-asynchrony-in-javascript">About asynchrony in JavaScript</h2>
+<p>The browser is a single-threaded JavaScript environment.</p>
 <p>Only one line of code is being run at a given time.</p>
-<p>We need to interact with user input though in real time.</p>
+<p>This introduces constraints when interacting with users or servers</p>
 <h2 id="the-dom-event-system">The DOM event system</h2>
 <p>We use DOM events to react on user input (e.g. click on a button).</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> button = <span class="ot">document</span>.<span class="fu">getElementById</span>(<span class="st">&#39;mybutton&#39;</span>);
@@ -85,6 +138,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 });
 <span class="ot">exampleRequest</span>.<span class="fu">open</span>(<span class="st">&#39;GET&#39;</span>, <span class="st">&#39;http://www.example.org/example.txt&#39;</span>);
 <span class="ot">exampleRequest</span>.<span class="fu">send</span>();</code></pre>
+<h2 id="thanks">Thanks 😍</h2>
 
 <hr />
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
