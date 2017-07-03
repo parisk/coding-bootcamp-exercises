@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>jQuery</title>
+
+    <!-- Bootstrap -->
+    <!-- JQuery is required -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="../css/pandoc-syntax.css">
+  </head>
+  <body>
+<h1 id="coding-bootcamp-jquery">Coding Bootcamp: jQuery</h1>
+<h2 id="intro-to-jquery">Intro to jQuery</h2>
+<p>Paris Kasidiaris</p>
+<p><a href="https://twitter.com/pariskasid">@pariskasid</a> / <script type="text/javascript">
+<!--
+h='&#x73;&#x6f;&#x75;&#114;&#x63;&#x65;&#108;&#x61;&#x69;&#114;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#112;&#x61;&#114;&#x69;&#x73;';e=n+a+h;
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<script type="text/javascript">
+<!--
+h='&#x73;&#x6f;&#x75;&#114;&#x63;&#x65;&#108;&#x61;&#x69;&#114;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#112;&#x61;&#114;&#x69;&#x73;';e=n+a+h;
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
+// -->
+</script><noscript>&#112;&#x61;&#114;&#x69;&#x73;&#32;&#x61;&#116;&#32;&#x73;&#x6f;&#x75;&#114;&#x63;&#x65;&#108;&#x61;&#x69;&#114;&#32;&#100;&#x6f;&#116;&#32;&#x63;&#x6f;&#x6d;</noscript>'+'<\/'+'a'+'>');
+// -->
+</script><noscript>&#60;&#x73;&#x63;&#114;&#x69;&#112;&#116;&#32;&#116;&#x79;&#112;&#x65;&#x3d;&#34;&#116;&#x65;&#120;&#116;&#x2f;&#106;&#x61;&#118;&#x61;&#x73;&#x63;&#114;&#x69;&#112;&#116;&#34;&#62;&#10;&#60;&#x21;&#x2d;&#x2d;&#10;&#104;&#x3d;&#x27;&#x73;&#x6f;&#x75;&#114;&#x63;&#x65;&#108;&#x61;&#x69;&#114;&#46;&#x63;&#x6f;&#x6d;&#x27;&#x3b;&#x61;&#x3d;&#x27;&#64;&#x27;&#x3b;&#110;&#x3d;&#x27;&#112;&#x61;&#114;&#x69;&#x73;&#x27;&#x3b;&#x65;&#x3d;&#110;&#x2b;&#x61;&#x2b;&#104;&#x3b;&#10;&#100;&#x6f;&#x63;&#x75;&#x6d;&#x65;&#110;&#116;&#46;&#x77;&#114;&#x69;&#116;&#x65;&#40;&#x27;&#60;&#x61;&#32;&#104;&#x27;&#x2b;&#x27;&#114;&#x65;&#102;&#x27;&#x2b;&#x27;&#x3d;&#34;&#x6d;&#x61;&#x27;&#x2b;&#x27;&#x69;&#108;&#116;&#x6f;&#x27;&#x2b;&#x27;&#58;&#x27;&#x2b;&#x65;&#x2b;&#x27;&#34;&#62;&#x27;&#x2b;&#x65;&#x2b;&#x27;&#60;&#92;&#x2f;&#x27;&#x2b;&#x27;&#x61;&#x27;&#x2b;&#x27;&#62;&#x27;&#x29;&#x3b;&#10;&#x2f;&#x2f;&#32;&#x2d;&#x2d;&#62;&#10;&#60;&#x2f;&#x73;&#x63;&#114;&#x69;&#112;&#116;&#62;&#60;&#110;&#x6f;&#x73;&#x63;&#114;&#x69;&#112;&#116;&#62;&#112;&#x61;&#114;&#x69;&#x73;&#32;&#x61;&#116;&#32;&#x73;&#x6f;&#x75;&#114;&#x63;&#x65;&#108;&#x61;&#x69;&#114;&#32;&#100;&#x6f;&#116;&#32;&#x63;&#x6f;&#x6d;&#60;&#x2f;&#110;&#x6f;&#x73;&#x63;&#114;&#x69;&#112;&#116;&#62;&#32;&#40;&#112;&#x61;&#114;&#x69;&#x73;&#32;&#x61;&#116;&#32;&#x73;&#x6f;&#x75;&#114;&#x63;&#x65;&#108;&#x61;&#x69;&#114;&#32;&#100;&#x6f;&#116;&#32;&#x63;&#x6f;&#x6d;&#x29;</noscript></p>
+<h2 id="agenda">Agenda</h2>
+<ul>
+<li>About jQuery<br /></li>
+<li>Getting started with jQuery<br /></li>
+<li>The syntax and structure of jQuery<br /></li>
+<li>DOM manipulation with jQuery<br /></li>
+<li>DOM events with jQuery<br /></li>
+<li>Asynchromous HTTP with jQuery<br /></li>
+<li>Learning more about jQuery</li>
+</ul>
+<h2 id="about-jquery">About jQuery</h2>
+<p>jQuery is a fast, small, and feature-rich JavaScript library.</p>
+<p>It makes things like DOM traversal and manipulation, event handling, animation, and Ajax much simpler.</p>
+<h2 id="including-jquery-in-your-website">Including jQuery in your website</h2>
+<p>There are many ways to include jQuery in your website.</p>
+<p>The easiest one is by using jQuery's CDN.</p>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="dv">&amp;lt;</span>!doctype html<span class="dv">&amp;gt;</span><span class="kw">&lt;br/&gt;</span><span class="dv">&amp;lt;</span>html<span class="dv">&amp;gt;</span><span class="kw">&lt;br/&gt;</span>  <span class="dv">&amp;lt;</span>head<span class="dv">&amp;gt;</span><span class="kw">&lt;br/&gt;</span>    ...<span class="kw">&lt;br/&gt;</span>    <span class="dv">&amp;lt;</span>script<span class="kw">&lt;br/&gt;</span>      src=<span class="dv">&amp;quot;</span>https://code.jquery.com/jquery-3.1.1.min.js<span class="dv">&amp;quot;</span><span class="kw">&lt;br/&gt;</span>      integrity=<span class="dv">&amp;quot;</span>sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=<span class="dv">&amp;quot;</span><span class="kw">&lt;br/&gt;</span>      crossorigin=<span class="dv">&amp;quot;</span>anonymous<span class="dv">&amp;quot;</span><span class="kw">&lt;br/&gt;</span>    <span class="dv">&amp;gt;&amp;lt;</span>/script<span class="dv">&amp;gt;</span><span class="kw">&lt;br/&gt;</span>  <span class="dv">&amp;lt;</span>/head<span class="dv">&amp;gt;</span><span class="kw">&lt;br/&gt;</span>  <span class="dv">&amp;lt;</span>body<span class="dv">&amp;gt;</span><span class="kw">&lt;br/&gt;</span>    ...<span class="kw">&lt;br/&gt;</span>  <span class="dv">&amp;lt;</span>/body<span class="dv">&amp;gt;</span><span class="kw">&lt;br/&gt;</span><span class="dv">&amp;lt;</span>/html<span class="dv">&amp;gt;</span></code></pre>
+<h2 id="syntax-overview">Syntax overview</h2>
+<p>There are 4 different syntactic ways to interact with jQuery.</p>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="fu">$</span>(selector).<span class="fu">method</span>(<span class="kw">function</span> () { ... });  <span class="co">// Run function (callback) for each matched element</span>
+
+<span class="fu">$</span>(<span class="st">&#39;&lt;div&gt;&lt;/div&gt;&#39;</span>)  <span class="co">// Create an DOM element based on the given HTML</span>
+
+<span class="fu">$</span>(<span class="kw">function</span> () { ... })  <span class="co">// Run function after the DOM loads</span>
+
+<span class="ot">$</span>.<span class="fu">method</span>()  <span class="co">// Run a &quot;static&quot; method</span></code></pre>
+<h2 id="the-jquery-object">The jQuery object</h2>
+<p>By including jQuery in our website, we get access to <strong>2 objects</strong>:</p>
+<ul>
+<li><code>jQuery</code>: the main jQuery object<br /></li>
+<li><code>$</code>: a shortcut to jQuery</li>
+</ul>
+<pre class="sourceCode javascript"><code class="sourceCode javascript">$ == jQuery  <span class="co">// true</span></code></pre>
+<h2 id="the-jquery-prototype">The jQuery prototype</h2>
+<p>jQuery immitates JavaScript's prototype mechanism.</p>
+<p>All methods of the <code>$.fn</code> object can be used on jQuery selected elements.</p>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="ot">$</span>.<span class="ot">fn</span>.<span class="fu">printElement</span> = <span class="kw">function</span> () {
+  <span class="ot">console</span>.<span class="fu">log</span>(<span class="kw">this</span>);
+};
+
+<span class="fu">$</span>(<span class="st">&#39;.pretty&#39;</span>).<span class="fu">printElement</span>();  <span class="co">// Will print all elements with &quot;pretty&quot; class</span></code></pre>
+<h2 id="traversing-the-dom">Traversing the DOM</h2>
+<p>jQuery lets us traverse the DOM in 3 ways:</p>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="fu">$</span>(<span class="st">&#39;div.pretty&#39;</span>);  <span class="co">// Access DOM elements via CSS selectors</span>
+
+<span class="fu">$</span>(oneImg);  <span class="co">// Access an element by passing it as a parameter</span>
+
+<span class="fu">$</span>([oneDiv, anotherImg]);  <span class="co">// Access multiple DOM elements via an array</span></code></pre>
+<p><strong>⚠️ Attention!</strong> If we create new elements that match our CSS selectors, we have to re-run the query to traverse them.</p>
+<h2 id="manipulatig-the-dom">Manipulatig the DOM</h2>
+<p>jQuery let's us manipulate multiple elements easily.</p>
+<p>Method chaining makes multiple operations much easier.</p>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="co">// Disable all buttons and then update their text</span>
+<span class="fu">$</span>(<span class="st">&#39;button&#39;</span>).<span class="fu">attr</span>(<span class="st">&#39;disabled&#39;</span>, <span class="st">&#39;disabled&#39;</span>).<span class="fu">text</span>(<span class="st">&#39;Do not click me.&#39;</span>);</code></pre>
+<h2 id="dom-events">DOM events</h2>
+<p>jQuery allows easy reaction to DOM events on multiple elements</p>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="co">// Disable every button when it gets clicked</span>
+<span class="fu">$</span>(<span class="st">&#39;button&#39;</span>).<span class="fu">on</span>(<span class="st">&#39;click&#39;</span>, <span class="kw">function</span> () {
+  <span class="fu">$</span>(<span class="kw">this</span>).<span class="fu">text</span>(<span class="st">&#39;clicked&#39;</span>).<span class="fu">attr</span>(<span class="st">&#39;disabled&#39;</span>, <span class="st">&#39;disabled&#39;</span>);
+});</code></pre>
+<h2 id="ajax">AJAX</h2>
+<p>jQuery provides us with easy methods for asynchronous HTTP requests.</p>
+<pre class="sourceCode javascript"><code class="sourceCode javascript">  <span class="ot">$</span>.<span class="fu">ajax</span>({
+    <span class="dt">url</span>: <span class="st">&#39;http://coding-bootcamp.pkasid.com&#39;</span>,
+  })
+  .<span class="fu">done</span>(<span class="kw">function</span>(data) {
+    <span class="fu">$</span>(<span class="st">&#39;#response-text&#39;</span>).<span class="fu">text</span>(data);
+  });</code></pre>
+<h2 id="learning-more-about-jquery">Learning more about jQuery</h2>
+<p>The best places to learn more about jQuery are:</p>
+<ul>
+<li>The jQuery Learning Center: <a href="http://learn.jquery.com/">http://learn.jquery.com/</a><br /></li>
+<li>The CodeCademy jQuery course 🆓 : <a href="https://www.codecademy.com/learn/jquery">https://www.codecademy.com/learn/jquery</a></li>
+</ul>
+
+<hr />
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+  </body>
+</html>
